@@ -1,0 +1,68 @@
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: #7768AE;
+}
+
+.header > h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    color: #FFFFFF;    
+    border: 3px solid rgba(246, 189, 96, 0.1);
+    border-radius: 2px;
+}
+
+.logo {
+    width: 14vw;
+    height: 14vw;
+    object-fit: contain;
+}
+
+@media screen and (min-width:700px) {
+    .logo {
+        width: 8vw;
+        height: 8vw;
+        object-fit: contain;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        gap: 4vw;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        background: #7768AE;
+    }
+    
+    .header > h1 {
+        font-family: 'Inter';
+        font-style: normal;
+        color: #FFFFFF;    
+        border: 3px solid rgba(246, 189, 96, 0.1);
+        border-radius: 2px;
+    }
+    
+    .logo {
+        width: 5vw;
+        height: 5vw;
+        object-fit: contain;
+    }
+}

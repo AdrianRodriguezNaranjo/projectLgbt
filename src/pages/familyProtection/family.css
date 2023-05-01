@@ -1,0 +1,55 @@
+.family {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: auto;
+}
+
+.text>h2 {
+  font-family: 'Inter';
+  font-style: oblique;
+  color: solid black;
+  font-size: 50px;
+}
+
+.text>h3 {
+  font-family: 'Inter';
+  font-style: normal;
+  color: solid black;
+  font-size: 20px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: auto;
+}
+
+.colorData {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  gap: 6%;
+  font-family: 'Inter';
+  font-style: normal;
+  color: solid black;
+  font-size: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.colorData>h4 {
+  border-radius: 5px;
+  color: green;
+}
+
+.colorData>h5 {
+  border-radius: 5px;
+  color: orange;
+}

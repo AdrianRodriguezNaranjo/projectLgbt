@@ -1,0 +1,15 @@
+.pride-list-item {
+  font-family: 'Inter';
+  font-style: normal;
+  color: solid black;
+  justify-content: center;
+  font-size: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.pride-list-img > img{
+  width: 80vw;
+  height: 50vw;
+  object-fit: contain;
+}

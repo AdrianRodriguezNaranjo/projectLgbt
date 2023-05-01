@@ -1,6 +1,10 @@
-.leaflet-container{
-    margin: 0 auto;
-    width: 75vw;
-    height: 60vh;
+.leaflet-container {
+    margin: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 80%;
+    height: 60vw;
+    object-fit: cover;
+    border: 5px black;
 }
 

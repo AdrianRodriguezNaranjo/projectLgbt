@@ -1,0 +1,31 @@
+.outlawed {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: auto;
+}
+
+.outlawed>h2 {
+  font-family: 'Inter';
+  font-style: oblique;
+  color: solid black;
+  font-size: 50px;
+}
+
+.textOutlawed>h3 {
+  font-family: 'Inter';
+  font-style: normal;
+  color: solid black;
+  font-size: 20px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.colorDataOut>h4 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 25px;
+  border-radius: 5px;
+  color: red;
+}

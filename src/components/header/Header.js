@@ -1,12 +1,13 @@
 import "./Header.css";
+import logo from "../../images/logo.png";
 
 function Header() {
   return (
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/outlawed">Perseguido</a></li>
-      <li><a href="/family">Matrimonio Igualitario</a></li>
-    </ul>
+    <div className="header">
+      <a href="/home"><img className="logo" src={logo} alt="Hola"/></a>
+      <h1><a href="/family">Protección Familiar</a></h1>
+      <h1><a href="/outlawed">Criminalización</a></h1>
+    </div>
   );
 }
 
