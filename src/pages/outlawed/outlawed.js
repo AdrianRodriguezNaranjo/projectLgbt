@@ -16,7 +16,7 @@ function Outlawed() {
           penalizan las formas de expresión de género dirigidas a personas transgénero y
           de género no conforme.</h3>
         <div className="colorDataOut">
-          <h4>Rojo: Matrimonio</h4>
+          <h4>Rojo: Criminalización</h4>
         </div>
       </div>
       <WorldMap2 />
