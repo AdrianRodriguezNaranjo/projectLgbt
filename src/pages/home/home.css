@@ -1,0 +1,12 @@
+.Home {
+  background-color: #4D9DE0;
+}
+
+.textHome>h1 {
+  font-family: 'Inter';
+  font-style: normal;
+  color: solid black;
+  font-size: 33px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
