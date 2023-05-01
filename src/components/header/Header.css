@@ -24,7 +24,8 @@ a {
     border-radius: 2px;
 }
 
-.header > img {
+.logo {
     width: 5vw;
     height: 5vw;
+    object-fit: contain;
 }
