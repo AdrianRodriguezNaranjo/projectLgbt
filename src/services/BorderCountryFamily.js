@@ -2,9 +2,10 @@ import { GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useState } from "react";
 
-function Argentina() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
+function BorderGreen() {
+  const [geoJSON, setGeoJSON] = useState([]);
+
+  const style = (feature) => {
     return {
       fillColor: "green",
       weight: 2,
@@ -13,30 +14,44 @@ function Argentina() {
       fillOpacity: 0.2
     };
   }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/ARG.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
+
+  const allBorder = [
+    {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/ARG.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/AUS.geojson"
+    }
+  ];
+
+  const fetchGeoJSON = async () => {
+    allBorder.map(async b => {
+      fetch(b.url)
+        .then(res => res.json())
+        .then((data) => {
+          setGeoJSON(oldValues => [...oldValues, data])
+        })
+    });
+  }
+
   useEffect(() => {
     fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
+      {geoJSON &&
+        geoJSON.map((g, index) =>
+          <GeoJSON key={index} data={g} style={style} />
+        )
+      }
     </>
   );
 }
 
-function Andorra() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
+function BorderOrange() {
+  const [geoJSON, setGeoJSON] = useState([]);
+
+  const style = (feature) => {
     return {
       fillColor: "orange",
       weight: 2,
@@ -45,58 +60,71 @@ function Andorra() {
       fillOpacity: 0.2
     };
   }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/AND.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
+
+  const allBorder = [
+    {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/AND.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/HRV.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/CYP.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/CZE.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/EST.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/GRC.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/HUN.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/ITA.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/LIE.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/MCO.geojson"
+    }, {
+      url: "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/SMR.geojson"
+    }
+  ];
+
+  const fetchGeoJSON = async () => {
+    allBorder.map(async b => {
+      fetch(b.url)
+        .then(res => res.json())
+        .then((data) => {
+          setGeoJSON(oldValues => [...oldValues, data])
+        })
+    });
+  }
+
   useEffect(() => {
     fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
+      {geoJSON &&
+        geoJSON.map((g, index) =>
+          <GeoJSON key={index} data={g} style={style} />
+        )
+      }
     </>
   );
 }
 
-function Australia() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "green",
-      weight: 2,
-      opacity: 1,
-      color: "green", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/AUS.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+function BorderFamily() {
   return (
     <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
+      <BorderGreen />
+      <BorderOrange />
     </>
   );
 }
+
+export default BorderFamily;
+/*
+
 
 function Austria() {
   const [geoJSON, setGeoJSON] = useState(null);
@@ -322,101 +350,9 @@ function CostaRica() {
   );
 }
 
-function Croatia() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/HRV.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
 
-function Cypres() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/CYP.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
 
-function Czech() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/CZE.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
+
 
 function Denmark() {
   const [geoJSON, setGeoJSON] = useState(null);
@@ -482,37 +418,7 @@ function Ecuador() {
   );
 }
 
-function Estonia() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/EST.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
+
 
 function Finland() {
   const [geoJSON, setGeoJSON] = useState(null);
@@ -610,69 +516,8 @@ function Germany() {
   );
 }
 
-function Greece() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/GRC.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
 
-function Hungary() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/HUN.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
+
 
 function Iceland() {
   const [geoJSON, setGeoJSON] = useState(null);
@@ -738,69 +583,14 @@ function Ireland() {
   );
 }
 
-function Italy() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/ITA.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
 
-function Liechtenstein() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/LIE.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
+
+
+
+
+
+
+
 
 function Luxembourg() {
   const [geoJSON, setGeoJSON] = useState(null);
@@ -898,37 +688,6 @@ function Mexico() {
   );
 }
 
-function Monaco() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/MCO.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
 
 function Netherlands() {
   const [geoJSON, setGeoJSON] = useState(null);
@@ -1058,37 +817,6 @@ function Portugal() {
   );
 }
 
-function SanMarino() {
-  const [geoJSON, setGeoJSON] = useState(null);
-  function style(feature) {
-    return {
-      fillColor: "orange",
-      weight: 2,
-      opacity: 1,
-      color: "orange", //Outline color
-      fillOpacity: 0.2
-    };
-  }
-  const fetchGeoJSON = () => {
-    fetch(
-      "https://raw.githubusercontent.com/inmagik/world-countries/master/countries/SMR.geojson"
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setGeoJSON(data);
-      });
-  };
-  useEffect(() => {
-    fetchGeoJSON();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <>
-      {geoJSON && <GeoJSON data={geoJSON} style={style} />}
-    </>
-  );
-}
 
 function Slovenia() {
   const [geoJSON, setGeoJSON] = useState(null);
@@ -1377,55 +1105,4 @@ function GBR() {
     </>
   );
 }
-
-function BorderFamily() {
-  return (
-    <>
-      <Argentina />
-      <Andorra />
-      <Australia />
-      <Austria />
-      <Belgica />
-      <Brazil />
-      <Canada />
-      <Chile />
-      <Colombia />
-      <CostaRica />
-      <Croatia />
-      <Cypres />
-      <Czech />
-      <Denmark />
-      <Ecuador />
-      <Estonia />
-      <Finland />
-      <France />
-      <Germany />
-      <Greece />
-      <Hungary />
-      <Iceland />
-      <Ireland />
-      <Italy />
-      <Liechtenstein />
-      <Luxembourg />
-      <Malta />
-      <Mexico />
-      <Monaco />
-      <Netherlands />
-      <NewZealand />
-      <Norway />
-      <Portugal />
-      <SanMarino />
-      <Slovenia />
-      <SouthAfrica />
-      <Spain />
-      <Sweden />
-      <Switzerland />
-      <Taiwan />
-      <USA />
-      <Uruguay />
-      <GBR />
-    </>
-  );
-}
-
-export default BorderFamily;
+*/
