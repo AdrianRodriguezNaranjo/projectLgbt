@@ -3,7 +3,7 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 import ChatService from "../../services/chat.services.js";
 import "./chat.css";
 
-function MessagesList() {
+function Chat() {
   const [messages, setMessages] = useState([]);
   const refForm = useRef();
 
@@ -71,4 +71,4 @@ function MessagesList() {
   );
 }
 
-export default MessagesList;
+export default Chat;

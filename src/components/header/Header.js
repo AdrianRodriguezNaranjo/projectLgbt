@@ -7,6 +7,7 @@ function Header() {
       <a href="/home"><img className="logo" src={logo} alt="Hola"/></a>
       <h1><a href="/family">Protección Familiar</a></h1>
       <h1><a href="/outlawed">Criminalización</a></h1>
+      <h1><a href="/chat">Chat</a></h1>
     </div>
   );
 }
