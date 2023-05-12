@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { FaRegTrashAlt } from 'react-icons/fa';
 import ChatService from "../../services/chat.services.js";
 import "./chat.css";
+import Header from "../../components/header/Header.js";
+import Footer from "../../components/footer/Footer.js";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
@@ -33,6 +34,13 @@ function Chat() {
     });
   }
 
+  /*
+  const updateMessage = (key) => {
+    ChatService.updateMessage(key).then((res) => {
+      getAllMessages();
+    });
+  }
+*/
   const addMessage = (e) => {
     e.preventDefault();
     const sentBy = e.target.sentBy.value;
@@ -49,6 +57,7 @@ function Chat() {
 
   return (
     <>
+    <Header />
       <div className="bicycle-list-main-container">
         <div className="bicycle-form-container">
           <form id="chat-form" onSubmit={addMessage} ref={refForm}>
@@ -62,11 +71,12 @@ function Chat() {
           {messages.map(b =>
             <div className="message-item" key={b.key}>
               <p>{b.sentBy} {b.text}</p>
-              <FaRegTrashAlt className="delete-message" onClick={() => removeMessage(b.key)} />
+              <button className="delete-message" type="submit" value="Eliminar" onClick={() => removeMessage(b.key)} />
             </div>
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
