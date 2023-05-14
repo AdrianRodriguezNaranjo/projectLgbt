@@ -58,15 +58,14 @@ function Chat() {
   return (
     <>
       <Header />
-      <div className="bicycle-list-main-container">
-        <div className="bicycle-form-container">
+      <div className="chat-list-main-container">
+        <div className="chat-form-container">
           <form id="chat-form" onSubmit={addMessage} ref={refForm}>
             <input className="rounded-input" type="text" name="sentBy" placeholder="sentBy" />
             <input className="rounded-input" type="text" name="text" placeholder="text" />
             <input className="rounded-input" type="submit" value="Enviar mensaje" />
           </form>
         </div>
-
         <div className="chat-list">
           {messages.map(b =>
             <div className="message-item" key={b.key}>
@@ -75,13 +74,13 @@ function Chat() {
               
             </div>
           )}
-        </div>
-        
+        </div>        
       </div>
       <Footer />
     </>
   );
-}/*
+}
+/*
 <input className="newText" type="text"  onChange={updateMessage} />
               <button className="update-message" onClick={() => updateMessage(b.key)}>Actualizar mensaje</button>
 */
