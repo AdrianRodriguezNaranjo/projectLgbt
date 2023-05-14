@@ -1,37 +1,25 @@
-<rss xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-  xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
   <channel>
-    <atom:link href="http://localhost:3000/rss" rel="self" type="application/rss+xml" />
-    <title>RSS de paises de </title>
+    <title>RSS de paises</title>
     <link>http://localhost:3000/</link>
-    <description>RSS de paises de </description>
+    <description>RSS de paises de sobre su postura del colectivo LGBTI+</description>
     <language>es-ES</language>
-    <pubDate>Sun, 14 May 2023 20:00:58 +0200</pubDate>
-    <lastBuildDate>Sun, 14 May 2023 20:00:58 +0200</lastBuildDate>
     <item>
       <title>Protección familiar</title>
       <link>http://localhost:3000/family</link>
       <description>Un mapa donde se muestran los paises donde existe matrimonio igualitario o unión
         civil</description>
-      <pubDate>Sun, 14 May 2023 20:00:58 +0200</pubDate>
-      <dc:creator />
     </item>
     <item>
       <title>Criminalización</title>
       <link>http://localhost:3000/outlawed</link>
       <description>Un mapa donde se muestran los paises donde se criminaliza al colectivo LGBTI+</description>
-      <pubDate>Sun, 14 May 2023 20:00:58 +0200</pubDate>
-      <dc:creator />
     </item>
     <item>
       <title>Chat</title>
-      <link>http://localhost:3000/outlawed</link>
+      <link>http://localhost:3000/chat</link>
       <description>Chat para comentar lo que quieras y preguntar tus dudas sobre el colectivo en el mundo</description>
-      <pubDate>Sun, 14 May 2023 20:00:58 +0200</pubDate>
-      <dc:creator />
     </item>
   </channel>
 </rss>
