@@ -34,13 +34,13 @@ function Chat() {
     });
   }
 
-  /*
-  const updateMessage = (key) => {
-    ChatService.updateMessage(key).then((res) => {
-      getAllMessages();
+  const updateMessage = (key, sentBy, newText) => {
+    ChatService.updateMessage(key, {
+      sentBy: sentBy,
+      text: newText
     });
   }
-*/
+
   const addMessage = (e) => {
     e.preventDefault();
     const sentBy = e.target.sentBy.value;
@@ -57,28 +57,33 @@ function Chat() {
 
   return (
     <>
-    <Header />
+      <Header />
       <div className="bicycle-list-main-container">
         <div className="bicycle-form-container">
           <form id="chat-form" onSubmit={addMessage} ref={refForm}>
             <input className="rounded-input" type="text" name="sentBy" placeholder="sentBy" />
             <input className="rounded-input" type="text" name="text" placeholder="text" />
-            <input className="rounded-input" type="submit" value="Add Message" />
+            <input className="rounded-input" type="submit" value="Enviar mensaje" />
           </form>
         </div>
 
         <div className="chat-list">
           {messages.map(b =>
             <div className="message-item" key={b.key}>
-              <p>{b.sentBy} {b.text}</p>
-              <button className="delete-message" type="submit" value="Eliminar" onClick={() => removeMessage(b.key)} />
+              <p>{b.sentBy}: {b.text}{" "}</p>
+              <button className="delete-message" onClick={() => removeMessage(b.key)}>Eliminar mensaje</button>
+              
             </div>
           )}
         </div>
+        
       </div>
       <Footer />
     </>
   );
-}
+}/*
+<input className="newText" type="text"  onChange={updateMessage} />
+              <button className="update-message" onClick={() => updateMessage(b.key)}>Actualizar mensaje</button>
+*/
 
 export default Chat;

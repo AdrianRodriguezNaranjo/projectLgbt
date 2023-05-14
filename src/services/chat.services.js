@@ -19,11 +19,9 @@ const removeMessage = (key) => {
   return remove(dbRefMessage);
 };
 
-const updateMessage = (key,newText) => {
-  const dbRefMessage = ref(db, `/messages/${key}`);
-  return update(dbRefMessage, {
-    text: newText
-  });
+const updateMessage = (key, updates) => {
+  const dbRefUpdate = ref(db, `/messages/${key}`);
+  return update(dbRefUpdate, updates);
 };
 
 export default {
