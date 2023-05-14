@@ -1,7 +1,6 @@
 import PrideServices from "../../services/Pride.services";
 import "./PrideList.css";
 
-
 function PrideList() {
   const getPride = () => {
     const allinfo = PrideServices.getPride();

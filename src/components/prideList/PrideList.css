@@ -6,10 +6,13 @@
   font-size: 25px;
   margin-left: 10%;
   margin-right: 10%;
+  border-radius: 10%;
 }
 
 .pride-list-img > img{
-  width: 80vw;
+  flex-wrap: nowrap;
   height: 50vw;
+  align-items: center;
   object-fit: contain;
+  border-radius: 10%;
 }
