@@ -4,6 +4,7 @@ import Home from "./pages/home/home";
 import Outlawed from "./pages/outlawed/outlawed";
 import Family from "./pages/familyProtection/family";
 import Chat from "./pages/chat/chat";
+import Policy from "./pages/policy/policy";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/outlawed" element={<Outlawed />}/>
         <Route path="/family" element={<Family />}/>
         <Route path="/chat" element={<Chat />}/>
+        <Route path="/policy" element={<Policy />}/>
       </Routes>
     </BrowserRouter>
   );
