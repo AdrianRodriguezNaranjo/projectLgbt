@@ -4,21 +4,25 @@ import Header from "../../components/header/Header";
 import NewsServices from "../../services/news.services.js";
 
 function News() {
-  const item = NewsServices.getNews();
+  const news = NewsServices.getNews();
   return (
-    <div className="News">
+    <>
       <Header />
-      <div className="textNews">
+      <div className="News">
         {news.map((item) => (
           <article key={item.new}>
-            <img src={item.img} alt={item.new} />
-            <h2>{item.new}</h2>
-            <p>{item.description}</p>
+            <div className="imgNews">
+              <img src={item.img} alt={item.new} />
+            </div>
+            <div className="infoNews">
+              <h2>{item.new}</h2>
+              <p>{item.description}</p>
+            </div>
           </article>
         ))}
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
