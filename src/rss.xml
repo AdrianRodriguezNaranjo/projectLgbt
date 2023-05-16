@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>RSS de paises</title>
+    <title>RSS de noticias</title>
     <link>http://localhost:3000/</link>
     <description>RSS de paises de sobre su postura del colectivo LGBTI+</description>
     <language>es-ES</language>

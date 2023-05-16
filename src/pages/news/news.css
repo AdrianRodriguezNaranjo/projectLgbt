@@ -1,0 +1,25 @@
+.News {
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.News article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 60%;
+  border-radius: 5%;
+  border: 1px solid black;
+}
+
+.imgNews {
+  width: fit-content;
+  height: auto;
+  object-fit: cover;
+  align-items: center;
+}
