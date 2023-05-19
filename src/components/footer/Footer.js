@@ -29,6 +29,7 @@ function Footer() {
         <h2><a href="/policy">Todos los derechos reservados</a></h2>
         <h2><a href="/policy">Política de Privacidad y Cookies</a></h2>
       </div>
+      <a href="#header"><ion-icon name="chevron-up-circle-outline"></ion-icon></a>
     </div>
   );
 }
