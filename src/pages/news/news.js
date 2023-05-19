@@ -12,11 +12,10 @@ function News() {
         {news.map((item) => (
           <article key={item.new}>
             <div className="imgNews">
-              <img src={item.img} alt={item.new} />
+              <a href={item.link}><img src={item.img} alt={item.new} /></a>
             </div>
             <div className="infoNews">
               <h2>{item.new}</h2>
-              <p>{item.description}</p>
             </div>
           </article>
         ))}

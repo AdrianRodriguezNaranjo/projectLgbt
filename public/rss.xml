@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>RSS de noticias</title>
+    <link>http://localhost:3000/news</link>
+    <description>RSS de noticias sobre el colectivo LGBTI+</description>
+    <language>es-ES</language>
+    <item>
+      <title>Activistas polacos ganan casos encontra de 'LGBT-free zones'</title>
+      <link>http://localhost:3000/news/1</link>
+      <description>Los intentos de las autoridades de silenciar los
+      activistas LGBT fallan en las cortes</description>
+    </item>
+    <item>
+      <title>Nepal: Tribunales ordenan reconocimiento de parejas del mismo sexo</title>
+      <link>http://localhost:3000/news/2</link>
+      <description>Reiteradas recomendaciones para el matrimonio igualitario</description>
+    </item>
+    <item>
+      <title>La provincia pakistaní Sindh, respalda los derechos trans</title>
+      <link>http://localhost:3000/news/3</link>
+      <description>Las autoridades nacionales necesitan hacer más para
+      proteger a las personas trans de la violencia</description>
+    </item>
+    <item>
+      <title>El matrimonio igualitario podría aportar autonomía y seguridad a
+      las mujeres</title>
+      <link>http://localhost:3000/news/4</link>
+      <description>Nuevo informe aborda la violencia familiar contra las
+      mujeres queer y transgénero</description>
+    </item>
+    <item>
+      <title>Sentencia contra Perú es una victoria para la igualdad LGBT</title>
+      <link>http://localhost:3000/news/5</link>
+      <description>Corte regional reafirma el derecho a la igualdad en la prestación de servicios</description>
+    </item>
+  </channel>
+</rss>

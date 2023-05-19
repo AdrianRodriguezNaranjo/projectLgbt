@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer.js";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
+  const [newMessages, setNewMessages] = useState('');
   const refForm = useRef();
 
   const getAllMessages = () => {
@@ -34,11 +35,13 @@ function Chat() {
     });
   }
 
-  const updateMessage = (key, sentBy, newText) => {
-    ChatService.updateMessage(key, {
-      sentBy: sentBy,
-      text: newText
-    });
+  const updateMessage = (key) => {
+    ChatService.updateMessage(key, newMessages)
+      .then(() => {
+        getAllMessages()
+        setNewMessages('')
+      })
+    ;
   }
 
   const addMessage = (e) => {
@@ -71,7 +74,8 @@ function Chat() {
             <div className="message-item" key={b.key}>
               <p>{b.sentBy}: {b.text}{" "}</p>
               <button className="delete-message" onClick={() => removeMessage(b.key)}>Eliminar mensaje</button>
-              
+              <input className="newText" type="text"  onChange={(e) => setNewMessages(e.target.value)} />
+              <button className="update-message" onClick={() => updateMessage(b.key)}>Actualizar mensaje</button>
             </div>
           )}
         </div>        
@@ -80,9 +84,5 @@ function Chat() {
     </>
   );
 }
-/*
-<input className="newText" type="text"  onChange={updateMessage} />
-              <button className="update-message" onClick={() => updateMessage(b.key)}>Actualizar mensaje</button>
-*/
 
 export default Chat;
