@@ -1,50 +1,71 @@
 .footer {
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    width: 100%;
-    height: auto;
-    left: 0px;
-    top: 687px;
-    gap: 4vw;
-    align-items: center;
-    background: #CEEDC7;
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
+  background-color: #CEEDC7;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.footer > h1 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 12px;
-    text-align: center;    
-    color: #ffffffff;
+.pages,
+.contactUs,
+.socialMedia,
+.policy {
+  margin-right: 20px;
 }
 
-.footer > h2 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 12px;
-    text-align: center;    
-    color: #ffffffff;
+.pages h1,
+.contactUs h1,
+.socialMedia h1,
+.policy h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pages h2,
+.contactUs h2,
+.policy h2 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a ion-icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+a[href="#header"] {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #333;
+  font-size: 30px;
+}
+
+a[href="#header"]:hover {
+  color: #666;
 }
 
 @media screen and (min-width:700px) {
-    .footer > h1 {
-        font-size: 30px;
-    }
-    
-    .footer > h2 {
-        font-size: 25px;
-    }
+  .footer {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width:900px) {
-    .footer > h2 {
-        font-size: 30px;
-    }       
+  .footer {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
